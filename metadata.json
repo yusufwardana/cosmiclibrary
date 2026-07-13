@@ -1,0 +1,6 @@
+{
+  "name": "CosmicLib Engine",
+  "description": "Sistem repository, cetak biru (blueprint), dan dokumentasi terstruktur untuk CosmicLib Engine dan CosmicLib Library.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Circulation",
+  "version": "1.0.0",
+  "description": "Modul utama sirkulasi peminjaman, pengembalian, perpanjangan buku, dan pencatatan denda.",
+  "author": "CosmicLib Core Team",
+  "email": "dev@cosmiclib.id",
+  "dependencies": {
+    "core": ">=1.0.0"
+  },
+  "providers": [
+    "Modules\\Circulation\\Providers\\CirculationServiceProvider"
+  ],
+  "permissions": [
+    {
+      "name": "circulation.view",
+      "label": "Melihat Riwayat Sirkulasi"
+    },
+    {
+      "name": "circulation.create",
+      "label": "Membuat Transaksi Peminjaman"
+    },
+    {
+      "name": "circulation.return",
+      "label": "Memproses Pengembalian Buku"
+    },
+    {
+      "name": "circulation.fine_payment",
+      "label": "Memproses Pembayaran Denda"
+    }
+  ],
+  "settings": {
+    "default_borrow_limit_days": 7,
+    "default_borrow_limit_books": 3,
+    "fine_amount_per_day": 1000
+  }
+}

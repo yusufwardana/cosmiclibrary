@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Deep Space Palette */
+  --color-space-950: #0a0b10;
+  --color-space-900: #0f111a;
+  --color-space-800: #1b1e2e;
+  --color-space-700: #2b2f47;
+  --color-space-600: #3c4261;
+  --color-space-500: #4f567a;
+  --color-space-400: #6d759e;
+  --color-space-300: #939bc4;
+  --color-space-200: #bdc4e3;
+  --color-space-100: #dfdedd;
+
+  --color-cosmic-pink: #ec4899;
+  --color-cosmic-purple: #8b5cf6;
+  --color-cosmic-blue: #3b82f6;
+  --color-cosmic-cyan: #06b6d4;
+  --color-cosmic-teal: #14b8a6;
+}
+
+/* Custom scrollbars for a clean look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0b10;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2f47;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3c4261;
+}
+

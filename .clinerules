@@ -1,0 +1,9 @@
+# Cline Rules for CosmicLib Engine
+
+This rule file is automatically loaded by Cline to maintain structural discipline.
+
+## Behavior Controls
+- **Phase Boundary**: Currently in **Phase 1 (Blueprint & Documentation)**. You are forbidden from initializing Composer, creating Laravel scaffold, or generating tables in SQL.
+- **File Integrity**: Never overwrite extensive documentation unless explicitly instructed by the user. Maintain the `00` to `20` numeric hierarchy in `docs/`.
+- **Quality Standard**: All markdown files must have structured titles, purpose sections, tables of contents, and placeholders.
+- **UI Design Style**: When requested to build or edit React views (e.g., this app's dashboard), prioritize modern sleek UI with deep-space dark themes, smooth Framer Motion cards, and custom typography pairings.
