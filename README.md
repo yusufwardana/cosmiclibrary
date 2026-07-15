@@ -1,4 +1,4 @@
-# 🌌 CosmicLib Engine
+# CosmicLib Engine
 
 ```text
    ______                      _      _       _      ______                 _              
