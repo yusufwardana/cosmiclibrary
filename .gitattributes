@@ -1,0 +1,104 @@
+# CosmicLib Engine - Git Attributes
+# https://git-scm.com/docs/gitattributes
+
+# ============================================================
+# Auto-detect text files and normalize line endings to LF
+# ============================================================
+* text=auto eol=lf
+
+# ============================================================
+# Source Code
+# ============================================================
+*.php text diff=php
+*.blade.php text diff=php
+*.js text diff=javascript
+*.ts text diff=javascript
+*.jsx text diff=javascript
+*.tsx text diff=javascript
+*.css text diff=css
+*.scss text diff=css
+*.sass text diff=css
+*.less text diff=css
+*.vue text
+*.html text diff=html
+*.xml text diff=html
+
+# ============================================================
+# Documentation & Configuration
+# ============================================================
+*.md text diff=markdown
+*.txt text
+*.json text
+*.yml text
+*.yaml text
+*.toml text
+*.ini text
+*.env text
+*.example text
+*.lock text -diff
+
+# ============================================================
+# Shell & Scripts
+# ============================================================
+*.sh text eol=lf
+*.bash text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# ============================================================
+# Git & CI Configuration
+# ============================================================
+.gitignore text
+.gitattributes text
+.editorconfig text
+.clinerules text
+Dockerfile text
+docker-compose.yml text
+
+# ============================================================
+# Binary Files (do not normalize)
+# ============================================================
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.webp binary
+*.avif binary
+
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+
+*.zip binary
+*.tar.gz binary
+*.rar binary
+*.7z binary
+
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+
+# ============================================================
+# Export Ignore (excluded from `git archive`)
+# ============================================================
+.github/ export-ignore
+tests/ export-ignore
+docs/ export-ignore
+prompts/ export-ignore
+examples/ export-ignore
+scripts/ export-ignore
+.editorconfig export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+.clinerules export-ignore
+CLAUDE.md export-ignore
+CODEX.md export-ignore
+AI_STUDIO.md export-ignore
+AGENTS.md export-ignore

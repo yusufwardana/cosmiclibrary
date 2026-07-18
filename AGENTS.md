@@ -1,6 +1,8 @@
 # CosmicLib Engine - Agent Instructions
 
-This file contains persistent instruction overrides and rules for AI Coding Agents (such as Gemini, Claude, Cline, or Codex) working on this repository.
+This file contains persistent instruction overrides and rules for **ALL** AI Coding Agents working on this repository.
+
+**Applies to**: Claude, Codex, ChatGPT, Cline, AI Studio, Gemini, and any other AI assistant.
 
 ---
 
@@ -10,6 +12,32 @@ This file contains persistent instruction overrides and rules for AI Coding Agen
 2. **DO NOT EXPOSE SECRETS**: Never commit database passwords, API keys, or security salt tokens to git. Use `.env.example` to declare variables.
 3. **RESPECT DIRECTORY BOUNDARIES**: Keep documentation in `docs/`, blueprints in `blueprint/`, examples in `examples/`, and coding templates/prompts in `prompts/`.
 4. **UI LANGUAGE**: All user interface elements must use **Bahasa Indonesia**. All underlying code (variable names, tables, classes, database schemas) must be written in **English**.
+
+---
+
+## ⚠️ UNIVERSAL AI WORKFLOW
+
+Every AI assistant MUST follow this workflow:
+
+1. **Read documentation first** — Read `AGENTS.md`, `PROJECT_MANIFEST.md`, and relevant `docs/` files.
+2. **Do not code immediately** — Analyze the project before writing any code.
+3. **Create an implementation plan** — Explain what you will change and why.
+4. **Explain files to be modified** — List every file you will create or change.
+5. **Avoid duplicate code** — Use service layer pattern, reuse existing patterns.
+6. **Follow Laravel Best Practice** — PSR-12, SOLID, thin controllers, form request validation.
+7. **Respect engine boundaries** — Menus from Menu Engine, permissions from Permission Engine, colors from Theme Engine, config from Setting Engine, modules from Module Engine.
+
+---
+
+## 🚫 PROHIBITIONS
+
+- ❌ Do NOT delete existing files or features
+- ❌ Do NOT create duplicate code
+- ❌ Do NOT hardcode roles, permissions, menus, or colors
+- ❌ Do NOT write business logic in controllers
+- ❌ Do NOT use `env()` outside config files
+- ❌ Do NOT write raw SQL without parameter binding
+- ❌ Do NOT use `dd()` or `dump()` in production code
 
 ---
 
@@ -30,3 +58,19 @@ When adding or editing schema blueprints in `blueprint/`:
 - Ensure all primary keys are `bigint unsigned AUTO_INCREMENT` or `uuid` where applicable.
 - Specify foreign key relations explicitly.
 - Include indices for query speed optimization on high-volume tables (e.g., `borrow_records`, `books`).
+
+---
+
+## 📋 AI-SPECIFIC INSTRUCTION FILES
+
+Each AI assistant has a dedicated instruction file in the repository root:
+
+| AI Assistant | Instruction File |
+| :--- | :--- |
+| Claude | [`CLAUDE.md`](CLAUDE.md) |
+| Codex / GitHub Copilot | [`CODEX.md`](CODEX.md) |
+| ChatGPT | [`prompts/chatgpt/README.md`](prompts/chatgpt/README.md) |
+| Cline | [`.clinerules`](.clinerules) |
+| AI Studio / Gemini | [`AI_STUDIO.md`](AI_STUDIO.md) |
+
+For comprehensive AI development guidelines, see [`docs/31_AI_GUIDELINE.md`](docs/31_AI_GUIDELINE.md).

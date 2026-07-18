@@ -2,8 +2,46 @@
 
 This rule file is automatically loaded by Cline to maintain structural discipline.
 
-## Behavior Controls
-- **Phase Boundary**: Currently in **Phase 1 (Blueprint & Documentation)**. You are forbidden from initializing Composer, creating Laravel scaffold, or generating tables in SQL.
-- **File Integrity**: Never overwrite extensive documentation unless explicitly instructed by the user. Maintain the `00` to `20` numeric hierarchy in `docs/`.
-- **Quality Standard**: All markdown files must have structured titles, purpose sections, tables of contents, and placeholders.
-- **UI Design Style**: When requested to build or edit React views (e.g., this app's dashboard), prioritize modern sleek UI with deep-space dark themes, smooth Framer Motion cards, and custom typography pairings.
+## Phase Control
+- Currently in **Phase 1 (Blueprint & Documentation)**.
+- You are forbidden from initializing Composer, creating Laravel scaffold, or generating tables in SQL.
+
+## File & Feature Integrity
+- Tidak boleh menghapus file yang sudah ada.
+- Tidak boleh menghapus fitur yang sudah ada.
+- Tidak boleh membuat duplicate code.
+
+## Engine Rules — No Hardcoding
+- Tidak boleh hardcode role — semua role berasal dari Permission Engine.
+- Tidak boleh hardcode permission — semua permission berasal dari Permission Engine.
+- Tidak boleh hardcode menu — semua menu berasal dari Menu Engine.
+- Tidak boleh hardcode warna — semua warna berasal dari Theme Engine.
+- Semua konfigurasi berasal dari Setting Engine.
+- Semua modul berasal dari Module Engine.
+
+## Language Policy
+- Gunakan Bahasa Indonesia untuk semua UI (label, pesan, notifikasi, help text).
+- Gunakan Bahasa Inggris untuk semua kode (kelas, variabel, method, tabel, kolom, route).
+
+## Coding Standards
+- Ikuti PSR-12 (Extended Coding Style Guide).
+- Ikuti prinsip SOLID.
+- Ikuti Laravel Coding Standard dan Best Practice.
+- Gunakan Service Layer Pattern — logika bisnis di Service, bukan Controller.
+- Gunakan Form Request untuk validasi input.
+- Semua operasi sensitif wajib dibungkus try-catch dan di-log.
+- Jangan gunakan `env()` di luar file config.
+- Jangan gunakan `dd()` atau `dump()` di production code.
+
+## Quality Standard
+- All markdown files must have structured titles, purpose sections, tables of contents, and placeholders.
+- Maintain the `00` to `32` numeric hierarchy in `docs/`.
+- Never overwrite extensive documentation unless explicitly instructed by the user.
+
+## UI Design Style
+- When building React views: prioritize modern sleek UI with deep-space dark themes, smooth Framer Motion cards, and custom typography pairings.
+
+## Required Reading
+- Read `AGENTS.md` and `PROJECT_MANIFEST.md` before any development work.
+- Reference `docs/23_CODING_STANDARD.md` for detailed coding standards.
+- Reference `docs/31_AI_GUIDELINE.md` for complete AI development guidelines.

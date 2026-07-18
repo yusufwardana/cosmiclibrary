@@ -1,22 +1,52 @@
 ---
-name: Feature Request
-about: Ajukan ide fitur baru atau peningkatan fungsionalitas untuk CosmicLib Engine.
+name: ✨ Permintaan Fitur
+about: Usulkan fitur atau peningkatan baru
 title: "[FEATURE] "
-labels: enhancement, discussion
-assignees: ""
+labels: enhancement
+assignees: ''
 ---
 
-## Apakah Permintaan Fitur Ini Terkait dengan Masalah Tertentu?
-Penjelasan singkat jika ide ini bermula dari kendala tertentu pada sistem yang ada.
+## Ringkasan Fitur
 
-## Deskripsi Fitur yang Diusulkan
-Berikan penjelasan detail tentang fitur baru yang Anda usulkan dan bagaimana cara kerjanya.
+<!-- Jelaskan fitur yang Anda usulkan secara ringkas -->
 
-## Alternatif Solusi yang Pernah Dipertimbangkan
-Jelaskan jika ada alternatif lain atau solusi sementara yang pernah Anda coba.
+## Latar Belakang / Masalah
 
-## Dampak Fungsional
-Siapa saja pengguna yang akan terbantu dengan adanya fitur ini (Siswa, Pustakawan, Admin Sekolah, dll)?
+<!-- Mengapa fitur ini diperlukan? Masalah apa yang diselesaikan? -->
 
-## Catatan Tambahan
-Tambahkan konteks, mockup desain, atau referensi lainnya di sini.
+## Solusi yang Diusulkan
+
+<!-- Jelaskan solusi atau fitur yang Anda inginkan -->
+
+## Alternatif yang Dipertimbangkan
+
+<!-- Jelaskan alternatif lain yang pernah Anda pertimbangkan -->
+
+## Modul / Engine Terkait
+
+<!-- Modul atau engine mana yang terdampak? -->
+
+- [ ] Core Engine
+- [ ] Module Engine
+- [ ] Theme Engine
+- [ ] Permission Engine
+- [ ] Menu Engine
+- [ ] Widget Engine
+- [ ] Plugin Engine
+- [ ] Media Engine
+- [ ] Notification Engine
+- [ ] Setting Engine
+- [ ] Installer Engine
+- [ ] Backup Engine
+- [ ] Update Engine
+- [ ] License Engine
+- [ ] Library Module
+- [ ] Lainnya: ___
+
+## Mockup / Referensi Visual
+
+<!-- Jika ada, lampirkan mockup atau screenshot referensi -->
+
+## Informasi Tambahan
+
+<!-- Tambahkan konteks lain yang relevan -->

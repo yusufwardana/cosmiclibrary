@@ -1,25 +1,55 @@
-# Pull Request Template
+## Pull Request Description
 
-## Deskripsi (Description)
-Berikan ringkasan perubahan yang diajukan dan masalah yang diselesaikan.
-*Provide a summary of the proposed changes and the issue being resolved.*
+<!-- Describe what this PR does and why -->
 
-## Jenis Perubahan (Type of Change)
-Silakan centang opsi yang relevan:
-- [ ] Perbaikan bug (Bug fix)
-- [ ] Fitur baru (New feature)
-- [ ] Pembaruan dokumentasi (Documentation update)
-- [ ] Refaktorisasi kode (Refactoring)
-- [ ] Peningkatan performa (Performance improvement)
+### Type of Change
 
-## Bagaimana Ini Diuji? (How Has This Been Tested?)
-Jelaskan pengujian yang Anda lakukan untuk memverifikasi perubahan Anda.
-- [ ] Unit Test
-- [ ] Integration Test
-- [ ] Manual Testing di Local Environment
+- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
+- [ ] ✨ New feature (non-breaking change which adds functionality)
+- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] 📚 Documentation update
+- [ ] ♻️ Refactoring (no functional changes)
+- [ ] 🧪 Test addition/update
+- [ ] 🎨 UI/UX improvement
 
-## Checklist
-- [ ] Kode saya telah mengikuti standar coding style dari CosmicLib.
-- [ ] Saya telah melakukan pengecekan mandiri (self-review) pada kode saya.
-- [ ] Dokumentasi yang relevan telah diperbarui.
-- [ ] Perubahan saya tidak menyebabkan regresi atau merusak fitur yang sudah ada.
+### Related Issue
+
+<!-- Link to the related issue, e.g., "Closes #123" -->
+
+Closes #
+
+### Changes Made
+
+<!-- List the changes you made -->
+
+-
+-
+-
+
+### Screenshots / Recordings
+
+<!-- If applicable, add screenshots or recordings to demonstrate the changes -->
+
+### Checklist
+
+- [ ] Kode mengikuti PSR-12 dan SOLID principles
+- [ ] Tidak ada duplicate code
+- [ ] Tidak ada hardcoded role, permission, menu, atau warna
+- [ ] Semua teks UI dalam Bahasa Indonesia
+- [ ] Semua variabel/kelas dalam Bahasa Inggris
+- [ ] Test telah ditulis dan lulus
+- [ ] Dokumentasi telah diperbarui (jika diperlukan)
+- [ ] Self-review telah dilakukan
+- [ ] Tidak ada `dd()`, `dump()`, atau `console.log()` di production code
+
+### Testing Instructions
+
+<!-- How can reviewers test this change? -->
+
+1.
+2.
+3.
+
+### Additional Notes
+
+<!-- Any additional context or information -->

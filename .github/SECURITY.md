@@ -1,25 +1,53 @@
-# Kebijakan Keamanan (Security Policy)
+# Security Policy
 
-Kami sangat memperhatikan keamanan **CosmicLib Engine**. Jika Anda menemukan celah keamanan, kami sangat menghargai bantuan Anda untuk melaporkannya secara bertanggung jawab.
+## Supported Versions
 
-## Versi yang Didukung (Supported Versions)
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.0.x   | ✅ Active Support  |
+| < 1.0   | ❌ Not Supported   |
 
-Saat ini, hanya versi utama yang sedang dikembangkan yang menerima pembaruan keamanan secara aktif:
+## Reporting a Vulnerability
 
-| Versi | Didukung Aktif |
-| :--- | :--- |
-| 1.0.x (Dev) | :white_check_mark: Ya |
-| < 1.0.0 | :x: Tidak |
+The CosmicLib Engine team takes security seriously. We appreciate your efforts to responsibly disclose your findings.
 
-## Melaporkan Kerentanan Keamanan (Reporting a Vulnerability)
+### How to Report
 
-**Jangan gunakan GitHub Issues publik untuk melaporkan celah keamanan.**
+**DO NOT** report security vulnerabilities through public GitHub issues.
 
-Silakan kirimkan laporan celah keamanan secara pribadi melalui email ke **security@cosmiclib.id** (atau email pengelola yang tertera di manifest). 
+Instead, please report security vulnerabilities by emailing:
 
-Harap sertakan informasi berikut dalam laporan Anda:
-- Deskripsi detail mengenai kerentanan yang ditemukan.
-- Langkah-langkah detail untuk mereproduksi kerentanan tersebut (Proof of Concept).
-- Dampak potensial dari kerentanan ini terhadap sistem atau data pengguna.
+📧 **security@cosmiclib.dev** *(placeholder — replace with actual email)*
 
-Kami akan meninjau laporan Anda dalam waktu maksimal 48 jam dan bekerja sama dengan Anda untuk merilis perbaikan (patch) secepatnya.
+### What to Include
+
+Please include the following details in your report:
+
+- Description of the vulnerability
+- Steps to reproduce the issue
+- Potential impact
+- Suggested fix (if any)
+
+### Response Timeline
+
+- **Acknowledgment**: Within 48 hours
+- **Initial Assessment**: Within 5 business days
+- **Fix & Release**: Within 30 days for critical issues
+
+### Disclosure Policy
+
+- We follow **Coordinated Disclosure** — please allow us reasonable time to fix the issue before public disclosure.
+- Credit will be given to reporters in the release notes (unless anonymity is requested).
+
+## Security Best Practices
+
+When contributing to CosmicLib Engine, please follow the security guidelines documented in [`docs/22_SECURITY_GUIDELINE.md`](../docs/22_SECURITY_GUIDELINE.md).
+
+### Key Points
+
+- Never commit secrets, API keys, or passwords to the repository
+- Use `.env.example` for environment variable templates
+- Always use parameterized queries (no raw SQL without binding)
+- Validate and sanitize all user input
+- Use CSRF protection on all forms
+- Escape all output in Blade templates using `{{ }}`

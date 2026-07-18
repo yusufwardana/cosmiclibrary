@@ -1,22 +1,45 @@
-# Kode Etik Komunitas CosmicLib Engine (Code of Conduct)
+# Contributor Covenant Code of Conduct
 
-## Komitmen Kami
-Dalam rangka memelihara lingkungan yang terbuka dan ramah, kami sebagai kontributor dan pengelola berkomitmen untuk menjadikan partisipasi dalam proyek dan komunitas kami sebuah pengalaman yang bebas dari pelecehan untuk semua orang, tanpa memandang usia, ukuran tubuh, disabilitas, etnis, identitas dan ekspresi gender, tingkat pengalaman, kebangsaan, penampilan pribadi, ras, agama, atau identitas dan orientasi seksual.
+## Our Pledge
 
-## Standar Kami
-Contoh perilaku yang berkontribusi pada penciptaan lingkungan yang positif meliputi:
-- Menggunakan bahasa yang ramah dan inklusif.
-- Menghormati sudut pandang dan pengalaman yang berbeda.
-- Menerima kritik konstruktif dengan lapang dada.
-- Fokus pada apa yang terbaik bagi komunitas.
-- Menunjukkan empati terhadap anggota komunitas lainnya.
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-Contoh perilaku yang tidak dapat diterima meliputi:
-- Penggunaan bahasa atau citra seksual dan perhatian atau rayuan seksual yang tidak diinginkan.
-- Komentar yang menghina, meremehkan, dan serangan pribadi atau politik.
-- Pelecehan publik atau pribadi.
-- Mempublikasikan informasi pribadi orang lain, seperti alamat fisik atau elektronik, tanpa izin eksplisit.
-- Perilaku lain yang secara wajar dapat dianggap tidak pantas dalam lingkungan profesional.
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
 
-## Tanggung Jawab Penegakan
-Pengelola komunitas bertanggung jawab untuk memperjelas standar perilaku yang dapat diterima dan diharapkan mengambil tindakan korektif yang adil dan konsisten sebagai tanggapan atas setiap perilaku yang tidak dapat diterima.
+## Our Standards
+
+Examples of behavior that contributes to a positive environment:
+
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
+
+Examples of unacceptable behavior:
+
+- The use of sexualized language or imagery, and sexual attention or advances of any kind
+- Trolling, insulting or derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information without explicit permission
+- Other conduct which could reasonably be considered inappropriate in a professional setting
+
+## Enforcement Responsibilities
+
+Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+
+## Scope
+
+This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces.
+
+## Enforcement
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at:
+
+📧 **conduct@cosmiclib.dev** *(placeholder — replace with actual email)*
+
+All complaints will be reviewed and investigated promptly and fairly.
+
+## Attribution
+
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org/), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).
