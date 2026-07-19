@@ -4,6 +4,41 @@ Semua perubahan penting pada proyek **CosmicLib Engine** akan didokumentasikan d
 
 ---
 
+## [1.1.0] - 2026-07-19
+
+### Ditambahkan (Added)
+- `docs/27_SECURITY_GUIDELINE.md` hingga `docs/38_PROMPT_LIBRARY.md` — 12 file canonical dengan penomoran baru
+- `docs/50_BLUEPRINT_FINAL.md` — Blueprint Final, checklist kelengkapan dokumentasi dan status kesiapan Phase 2
+- `scripts/copy_docs.ps1` — Script untuk renumbering dokumen
+
+### Diubah (Changed)
+- `docs/00_DOCS_INDEX.md` — Status tabel diperbarui: 12 file 🔄 Renumber → ✅, 50_BLUEPRINT_FINAL ⬜ Planned → ✅
+- `CHANGELOG.md` — Entri v1.1.0 ditambahkan
+
+---
+
+## [1.1.0-alpha.1] - 2026-07-19
+
+### Ditambahkan (Added)
+- `docs/00_DOCS_INDEX.md` — Index & audit penomoran seluruh dokumen, termasuk peta collision resolution
+- `blueprint/database_schema.sql` di-rewrite total (v1.1.0): 27 tabel, mencakup seluruh engine
+
+### Diubah (Changed)
+- **`blueprint/database_schema.sql`** — Sebelumnya hanya 5 tabel library (books, book_items, members, borrow_records, fines). Sekarang mencakup:
+  - Users & RBAC (users, roles, permissions, role_permissions, user_roles)
+  - Platform engines (modules, menus, themes, settings, media, notifications, widgets, plugins, backups)
+  - Audit & activity logs (audit_logs, activity_logs)
+  - Library module (categories, books, book_items, members, borrow_records, reservations, fines)
+  - Laravel infrastructure (sessions, password_reset_tokens, jobs, failed_jobs, cache, cache_locks)
+  - Soft deletes pada users, members, books, book_items, media
+  - Indices pada FK columns dan high-cardinality filter columns
+  - FULLTEXT index pada books (title, author, description)
+
+### Diperbaiki (Fixed)
+- Dokumentasi numbering collision: 11 prefix bentrok (16–26) di-audit dan canonical numbering ditetapkan di `00_DOCS_INDEX.md`
+
+---
+
 ## [1.0.0-alpha.2] - 2026-07-16
 
 ### Ditambahkan (Added)

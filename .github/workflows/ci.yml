@@ -62,20 +62,82 @@ jobs:
           fi
 
   # ============================================
-  # PHP Lint (Future — activated in Fase 2+)
+  # PHP Lint & Style Check (Laravel Pint)
   # ============================================
-  # php-lint:
-  #   name: PHP Lint & Style Check
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Setup PHP
-  #       uses: shivammathur/setup-php@v2
-  #       with:
-  #         php-version: '8.3'
-  #     - name: Install Dependencies
-  #       run: composer install --prefer-dist --no-progress
-  #     - name: Run Laravel Pint
-  #       run: vendor/bin/pint --test
-  #     - name: Run PHPUnit
-  #       run: php artisan test
+  lint:
+    name: Pint Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, mysqlnd, pdo, pdo_mysql
+          coverage: none
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Run Laravel Pint
+        run: vendor/bin/pint --test
+
+  # ============================================
+  # Static Analysis (Larastan / PHPStan)
+  # ============================================
+  static-analysis:
+    name: Larastan Level 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, mysqlnd, pdo, pdo_mysql
+          coverage: none
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --no-progress --error-format=github
+
+  # ============================================
+  # Tests (PHPUnit with Coverage)
+  # ============================================
+  tests:
+    name: PHPUnit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, mysqlnd, pdo, pdo_mysql, pdo_sqlite
+          coverage: xdebug
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Prepare Environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Run Tests with Coverage
+        run: |
+          vendor/bin/phpunit --coverage-clover=coverage.xml
+
+      - name: Upload Coverage Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml

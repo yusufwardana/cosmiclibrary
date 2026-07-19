@@ -3,8 +3,7 @@
 This rule file is automatically loaded by Cline to maintain structural discipline.
 
 ## Phase Control
-- Currently in **Phase 1 (Blueprint & Documentation)**.
-- You are forbidden from initializing Composer, creating Laravel scaffold, or generating tables in SQL.
+- Currently in **Phase 2 (Implementation & Scaffold)**.
 
 ## File & Feature Integrity
 - Tidak boleh menghapus file yang sudah ada.

@@ -1,0 +1,1 @@
+{"name":"Test Plugin","version":"2.0.0","description":"Test plugin desc","author":"Tester","hook":"library:after_borrow","enabled":true,"priority":50}
