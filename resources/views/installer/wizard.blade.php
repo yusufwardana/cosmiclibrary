@@ -32,17 +32,23 @@
                                 'welcome' => 'Mulai',
                                 'license' => 'Lisensi',
                                 'requirements' => 'Sistem',
-                                'school' => 'Sekolah',
+                                'database' => 'Database',
                                 'admin' => 'Admin',
+                                'school' => 'Sekolah',
                                 'smtp' => 'Email',
                                 'confirm' => 'Konfirmasi',
                             ];
                             $currentRoute = request()->route()->getName() ?? 'installer.welcome';
                             $currentStep = str_replace('installer.', '', $currentRoute);
-                            $currentIndex = array_search($currentStep, array_keys($steps));
+                            $currentStep = explode('.', $currentStep)[0];
+                            $stepKeys = array_keys($steps);
+                            $currentIndex = array_search($currentStep, $stepKeys, true);
+                            if ($currentIndex === false) {
+                                $currentIndex = 0;
+                            }
                         @endphp
                         @foreach($steps as $key => $label)
-                            @php $index = array_search($key, array_keys($steps)); @endphp
+                            @php $index = array_search($key, $stepKeys, true); @endphp
                             <div class="flex items-center">
                                 <div class="flex flex-col items-center">
                                     <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold

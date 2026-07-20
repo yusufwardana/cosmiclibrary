@@ -4,15 +4,25 @@
     <h2 class="text-2xl font-semibold text-white mb-4">Konfirmasi Instalasi</h2>
     <p class="text-purple-200 mb-6">Periksa kembali data sebelum instalasi dimulai.</p>
 
+    @if(empty($data['db_database']) || empty($data['admin_email']) || empty($data['school_name']))
+        <div class="bg-amber-500/20 border border-amber-500/50 rounded-lg p-4 mb-4">
+            <p class="text-amber-100 text-sm">
+                Data wizard belum lengkap. Silakan kembali mengisi langkah Database, Admin, dan Sekolah sebelum menjalankan instalasi.
+            </p>
+        </div>
+    @endif
+
     <div class="space-y-3 mb-6">
-        @foreach($data as $key => $value)
-            @if($value && !in_array($key, ['admin_password', 'mail_password']))
+        @forelse($data as $key => $value)
+            @if($value && !in_array($key, ['admin_password', 'mail_password', 'db_password', 'db_verified'], true))
                 <div class="flex justify-between py-2 border-b border-white/10">
                     <span class="text-purple-200 text-sm">{{ str_replace('_', ' ', ucfirst($key)) }}</span>
                     <span class="text-white text-sm">{{ is_string($value) ? $value : json_encode($value) }}</span>
                 </div>
             @endif
-        @endforeach
+        @empty
+            <p class="text-purple-200 text-sm">Belum ada data sesi instalasi.</p>
+        @endforelse
     </div>
 
     <div id="loading-overlay" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50">
@@ -30,14 +40,15 @@
             Kembali
         </a>
         <button type="submit" id="install-btn"
-                class="flex-1 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition">
+                @disabled(empty($data['db_database']) || empty($data['admin_email']) || empty($data['school_name']))
+                class="flex-1 py-3 rounded-lg bg-green-600 hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold transition">
             Jalankan Instalasi
         </button>
     </form>
 
     @push('scripts')
     <script>
-        document.getElementById('install-form').addEventListener('submit', function(e) {
+        document.getElementById('install-form').addEventListener('submit', function() {
             document.getElementById('loading-overlay').classList.remove('hidden');
             document.getElementById('install-btn').disabled = true;
             document.getElementById('install-btn').textContent = 'Memproses...';

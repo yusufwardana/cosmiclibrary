@@ -21,7 +21,8 @@ class AdminAccountController extends Controller
         session([
             'installer.admin_name' => $request->name,
             'installer.admin_email' => $request->email,
-            'installer.admin_password' => bcrypt($request->password),
+            // Store plain password for install step; User model hashes on save.
+            'installer.admin_password' => $request->password,
         ]);
 
         return redirect()->route('installer.school');

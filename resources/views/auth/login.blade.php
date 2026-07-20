@@ -9,6 +9,12 @@
     <div class="container" style="max-width: 400px;">
         <h1 class="mb-4">Masuk</h1>
 
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         @if ($errors->any())
             <div class="alert alert-danger">
                 {{ $errors->first('email') }}
