@@ -21,6 +21,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(ThemeEngine::class);
         $this->app->singleton(MenuEngine::class);
         $this->app->singleton(WidgetEngine::class);
+
+        // Force file-based sessions during installer wizard
+        // because DB hasn't been configured/migrated yet.
+        if (! file_exists(storage_path('installed'))) {
+            config(['session.driver' => 'file']);
+        }
     }
 
     public function boot(): void

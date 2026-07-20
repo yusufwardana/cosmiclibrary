@@ -20,7 +20,7 @@ class LoginController extends Controller
             return back()->withErrors(['email' => __('auth.failed')]);
         }
 
-        return redirect()->intended('/');
+        return redirect()->intended(route('dashboard'));
     }
 
     public function logout()

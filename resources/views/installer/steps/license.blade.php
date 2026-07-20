@@ -16,11 +16,12 @@
         </p>
     </div>
 
-    <form method="POST" action="{{ route('installer.license.accept') }}" class="space-y-4">
+    <form id="licenseForm" method="POST" action="{{ route('installer.license.accept') }}" class="space-y-4">
         @csrf
-        <label class="flex items-center space-x-3 text-white">
-            <input type="checkbox" name="accept" value="1" required
-                   class="w-5 h-5 rounded border-white/20 bg-white/5 text-purple-600 focus:ring-purple-500">
+        <label class="flex items-center space-x-3 text-white cursor-pointer">
+            <input type="checkbox" id="acceptCheckbox" name="accept" value="1"
+                   class="w-5 h-5 rounded border-2 border-white/20 bg-white/5 text-purple-600 focus:ring-2 focus:ring-purple-500 cursor-pointer"
+                   onchange="updateSubmitButton()">
             <span>Saya menyetujui ketentuan lisensi di atas</span>
         </label>
 
@@ -29,10 +30,31 @@
                class="flex-1 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white text-center transition">
                 Kembali
             </a>
-            <button type="submit"
-                    class="flex-1 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold transition">
+            <button type="submit" id="submitBtn"
+                    class="flex-1 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled>
                 Lanjutkan
             </button>
         </div>
     </form>
+
 @endsection
+
+@push('scripts')
+    <script>
+        function updateSubmitButton() {
+            const checkbox = document.getElementById('acceptCheckbox');
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = !checkbox.checked;
+        }
+
+        document.getElementById('licenseForm').addEventListener('submit', function(e) {
+            const checkbox = document.getElementById('acceptCheckbox');
+            if (!checkbox.checked) {
+                e.preventDefault();
+                alert('Anda harus menyetujui ketentuan lisensi terlebih dahulu');
+                return false;
+            }
+        });
+    </script>
+@endpush

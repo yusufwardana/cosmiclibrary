@@ -32,7 +32,6 @@ class InstallerEngine extends BaseService
         $this->assertEnvironment();
         $this->assertWizardData($data);
 
-        $this->writeEnv($data);
         $this->refreshDatabaseConfig($data);
 
         Artisan::call('migrate', ['--force' => true]);
@@ -44,6 +43,9 @@ class InstallerEngine extends BaseService
         $this->createAdmin($data);
         $this->applySchoolSettings($data);
         $this->createLockFile();
+
+        // Write .env LAST so the dev server restart doesn't kill the request.
+        $this->writeEnv($data);
     }
 
     public function isInstalled(): bool

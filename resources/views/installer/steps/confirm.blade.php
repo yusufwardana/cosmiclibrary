@@ -12,6 +12,13 @@
         </div>
     @endif
 
+    @if(session('error'))
+        <div class="bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-4">
+            <h3 class="text-red-200 font-semibold mb-2">Error Instalasi</h3>
+            <p class="text-red-100 text-sm">{{ session('error') }}</p>
+        </div>
+    @endif
+
     <div class="space-y-3 mb-6">
         @forelse($data as $key => $value)
             @if($value && !in_array($key, ['admin_password', 'mail_password', 'db_password', 'db_verified'], true))
@@ -49,9 +56,10 @@
     @push('scripts')
     <script>
         document.getElementById('install-form').addEventListener('submit', function() {
+            var btn = document.getElementById('install-btn');
+            btn.disabled = true;
+            btn.textContent = 'Memproses...';
             document.getElementById('loading-overlay').classList.remove('hidden');
-            document.getElementById('install-btn').disabled = true;
-            document.getElementById('install-btn').textContent = 'Memproses...';
         });
     </script>
     @endpush

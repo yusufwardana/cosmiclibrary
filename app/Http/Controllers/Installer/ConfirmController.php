@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Installer;
 use App\Http\Controllers\Controller;
 use App\Services\InstallerEngine;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 
 class ConfirmController extends Controller
@@ -23,19 +24,19 @@ class ConfirmController extends Controller
         $data = $this->wizardData();
 
         try {
+            Log::info('ConfirmController::run - Starting installation', ['data_keys' => array_keys($data)]);
             $installer->install($data);
+            Log::info('ConfirmController::run - Installation successful');
         } catch (\Throwable $e) {
+            Log::error('ConfirmController::run - Installation failed', ['error' => $e->getMessage()]);
             report($e);
 
             return redirect()->route('installer.confirm')
                 ->with('error', 'Instalasi gagal: '.$e->getMessage());
         }
 
-        $installerKeys = array_filter(
-            array_keys(session()->all()),
-            fn (string $k): bool => str_starts_with($k, 'installer.')
-        );
-        session()->forget($installerKeys);
+        session()->forget('installer');
+        Log::info('ConfirmController::run - Session cleared, redirecting to login');
 
         return redirect()
             ->route('auth.login')
@@ -47,13 +48,6 @@ class ConfirmController extends Controller
      */
     private function wizardData(): array
     {
-        $data = [];
-        foreach (session()->all() as $key => $value) {
-            if (str_starts_with($key, 'installer.')) {
-                $data[str_replace('installer.', '', $key)] = $value;
-            }
-        }
-
-        return $data;
+        return (array) session('installer', []);
     }
 }
